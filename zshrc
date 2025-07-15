@@ -69,7 +69,7 @@ source /usr/share/zsh-sudo/sudo.plugin.zsh
 
 # Functions
 function mkt(){
-	mkdir {reconnaissance,infiltration,escalation,content}
+	mkdir {recon,intrusion,privesc,content}
 }
 
 # Extract nmap information
