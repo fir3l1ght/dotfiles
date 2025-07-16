@@ -12,7 +12,7 @@ btop
 ## Stores & installers
 pipx
 # Remote Desktop Clients
-xfreerdp
+freerdp2-x11
 # Containers
 docker.io
 # VM Managers
