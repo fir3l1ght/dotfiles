@@ -38,4 +38,4 @@ gobuster
 feroxbuster
 wfuzz
 ## Web proxy
-#burpsuite 
+burpsuite
