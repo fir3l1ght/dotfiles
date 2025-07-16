@@ -1,3 +1,5 @@
+regular_user=$(users | cut -d' ' -f1)
+
 # Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
 
@@ -43,7 +45,7 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-source /home/th3jung13r/powerlevel10k/powerlevel10k.zsh-theme
+source /home/${regular_user}/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -63,9 +65,7 @@ alias cat='batcat'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Plugins
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-sudo/sudo.plugin.zsh
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 # Functions
 function mkt(){
@@ -125,18 +125,20 @@ function rmk(){
 	shred -zun 10 -v $1
 }
 
-# Finalize Powerlevel10k instant prompt. Should stay at the bottom of ~/.zshrc.
-(( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalize
+# Function to set objective's IP
+function settarget {
+  ip_address=$1
+  echo "$ip_address" > /home/${regular_user}/.config/bin/target
+}
+
+function rmtarget {
+  echo "" > /home/${regular_user}/.config/bin/target
+}
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 
-# Function to set objective's IP
-function settarget {
-  ip_address=$1
-  echo "$ip_address" > /home/th3jung13r/.config/bin/target
-}
-
-function rmtarget {
-  echo "" > /home/th3jung13r/.config/bin/target
-}
+# Finalize Powerlevel10k instant prompt. Should stay at the bottom of ~/.zshrc.
+(( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalize
