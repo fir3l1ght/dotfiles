@@ -7,6 +7,8 @@ tmux
 tree
 lsd
 bat
+## Searching & filtering
+ripgrep
 ## Performance
 btop
 ## Stores & installers
