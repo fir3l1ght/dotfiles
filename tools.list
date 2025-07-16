@@ -1,0 +1,39 @@
+# Linux Utilities
+## Shell
+zsh
+## Multiplexer
+tmux
+## Navigation
+tree
+lsd
+bat
+## Performance
+btop
+## Stores & installers
+pipx
+# Remote Desktop Clients
+xfreerdp
+# Containers
+docker.io
+# VM Managers
+#virtualbox
+#virtualbox-dkms
+#vagrant
+# Sandboxing & isolation
+firejail
+firejail-profiles
+firetools
+# Code editors
+codium
+# Cybersecurity
+## Port scanning
+nmap
+## Network Traffic Analysis
+wireshark
+tshark
+## Fuzzing
+gobuster
+feroxbuster
+wfuzz
+## Web proxy
+#burpsuite 
